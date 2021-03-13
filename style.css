@@ -1,0 +1,2406 @@
+/* 
+Theme Name: Wheel Wish
+Description: The Wheel Wish child theme provides a custom header and footer, contains dependencies for certain custom layouts such as the loan calculator and the application process.  IMPORTANT:  Please keep the hello elementor theme installed as this is the parent to this child theme.
+Author: Brian C Ressler
+Author URI: https://briancressler.com
+Template: hello-elementor
+Version: 1.0.0
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/*
+    Add your custom styles here
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body, html {
+    display: block;
+    width: 100%;
+    overflow-x: hidden !important;
+}
+
+body {
+    height:100%;
+    overflow-y: auto;
+}
+
+#wpadminbar {
+    position: fixed !important;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, div, br, a, input, textarea, button {
+    font-family: 'Lato', sans-serif;
+}
+
+.eccent_header {
+    display: flex;
+    width:100%;
+    height:auto;
+    flex-flow:column wrap;
+}
+
+.eccent_topbar {
+    display: block;
+    width:100%;
+    padding:5px;
+    background-color:#0f75bc;
+    box-sizing: border-box;
+}
+
+.eccent_container {
+    display: flex;
+    width:100%;
+    margin:0 auto;
+    box-sizing: border-box;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.eccent_footer_container {
+    align-items: flex-start !important;
+}
+
+.eccent_top_telephone{
+    color:#FFF;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 700;
+    display: inline-block;
+    width:auto;
+    text-decoration: none;
+}
+
+.eccent_top_telephone:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.eccent_navigation_area {
+    display: block;
+    width: 100%;
+    background-color:#FFF;
+    box-sizing: border-box;
+    border-bottom: 0.5px solid #CCC;
+}
+
+.eccent_top_pad {
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.eccent_column_half {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.eccent_logo_holder {
+    text-align: left;
+}
+
+.eccent_nav_fixed_logo_container a img {
+  display: inline-block;
+  width:100%;
+  height:auto;
+  max-width: 180px;
+}
+
+.eccent_logo_holder a, .eccent_nav_fixed_logo_container a {
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+    width:auto;
+    height:auto;
+    line-height: initial !important;
+}
+
+.eccent_menu_opt {
+    display: inline-block;
+    width:40px;
+    height:40px;
+    padding:7px !important;
+    box-sizing: border-box;
+    background: #FFF !important;
+    border-radius: 3px !important;
+    border:none !important;
+    outline: none !important;
+}
+
+.eccent_menu_opt:hover, .eccent_menu_opt:active {
+    background-color: #EEE !important;
+}
+
+.eccent_menu_opt img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.eccent_logo_holder a:hover, .eccent_logo_holder a:active, .eccent_logo_holder a:focus, .eccent_nav_fixed_logo_container a:hover, .eccent_nav_fixed_logo_container a:active, .eccent_nav_fixed_logo_container a:focus {
+  opacity: 0.7;
+}
+
+.eccent_nav_actions {
+    display: block;
+    position: relative;
+    width:100%;
+    height:auto;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.eccent_nav_actions li a {
+    display: block;
+    -webkit-transition: color 0.3s ease, opacity 0.3s ease;
+    -moz-transition: color 0.3s ease, opacity 0.3s ease;
+    -ms-transition: color 0.3s ease, opacity 0.3s ease;
+    -o-transition: color 0.3s ease, opacity 0.3s ease;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    width:100%;
+    height:auto;
+}
+
+.eccent_nav_actions li:not(.eccent_nav_actions_dark) a {
+    color: #222;
+}
+
+.eccent_nav_actions li:not(.eccent_nav_actions_dark) a:hover, .eccent_nav_actions li:not(.eccent_nav_actions_dark) a:active {
+    color: #0f75bc;
+}
+
+.eccent_nav_actions .eccent_nav_actions_dark a {
+    display: block;
+    background-color: #0f75bc;
+    color: #FFF;
+}
+
+.eccent_nav_actions .eccent_nav_actions_dark a:hover, .eccent_nav_actions .eccent_nav_actions_dark a:active {
+    opacity: 0.7;
+}
+
+#eccent_content_container {
+    display: block;
+    position: relative;
+    width:100%;
+    height: auto;
+    overflow: hidden;
+    padding:0;
+    margin:0;
+    left:0;
+    top:0 !important;
+    z-index: 1;
+    -webkit-transtition: left .3s ease-in-out, right .3s ease-in-out;
+    transition: left .3s ease-in-out, right .3s ease-in-out;
+}
+
+.eccent_nav_fixed {
+    display: block;
+    position: fixed;
+    background-color:#111;
+    width:280px;
+    height:100%;
+    left:-280px;
+    top:0;
+    z-index: 2;
+    -webkit-transtition: left .3s ease-in-out, right .3s ease-in-out;
+    transition: left .3s ease-in-out, right .3s ease-in-out;
+}
+
+.show_nav_fixed {
+  left: 0 !important;
+}
+
+.elementor .elementor-html5-video {
+    width: 100% !important;
+}
+
+.menu-main-menu-container {
+    display: block;
+    width: 100%;
+}
+
+#eccent_menu_ul {
+    display: flex;
+    flex-wrap: initial !important;
+    flex-flow: column wrap;
+    padding:0;
+}
+
+#eccent_nav_fixed .site-navigation ul.menu li a {
+    display: block;
+    width: 100%;
+    padding:30px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    color:#FFF;
+    font-size:12.5px;
+    line-height:16.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.7px !important;
+}
+
+#eccent_nav_fixed .site-navigation ul.menu li a:hover, .site-navigation ul.menu li a:active {
+    cursor: pointer !important;
+}
+
+#eccent_nav_fixed .site-navigation ul.menu li a:hover, .site-navigation ul.menu li a:active, .current-menu-item a {
+    color:#0f75bc !important;
+}
+
+#eccent_nav_fixed .site-navigation ul.menu li a:hover:before, #eccent_nav_fixed .site-navigation ul.menu li a:active:before, .current-menu-item a:before {
+    filter: invert(26%) sepia(66%) saturate(2610%) hue-rotate(187deg) brightness(97%) contrast(88%) !important;
+}
+
+#eccent_nav_fixed .site-navigation ul.menu li.menu-item-has-children:after {
+    position: absolute;
+    top:10px;
+    right:20px !important;
+    font-size: 1.0em !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#eccent_menu_ul li {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+#eccent_menu_ul li:last-of-type a {
+    border-bottom: none !important;
+}
+
+#eccent_menu_ul .sub-menu li a:hover {
+  opacity: 0.5;
+}
+
+#eccent_nav_fixed .site-navigation ul.menu li.menu-item-has-children {
+    padding: 0 !important;
+}
+
+#eccent_nav_fixed .site-navigation ul.menu li ul {
+    display: flex !important;
+    width:100% !important;
+    position: relative !important;
+    flex-flow: column wrap !important;
+}
+
+#eccent_menu_ul li {
+    display: flex !important;
+    width:100% !important;
+    flex-flow: row wrap !important;
+}
+
+#eccent_menu_ul .sub-menu {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background-color:#e9edf0 !important;
+    border: none !important;
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.show_sub {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#eccent_menu_ul .sub-menu li a {
+    color:#0f75bc !important;
+    font-size: 12px !important;
+    border-bottom: 0.5px solid #c1d9eb;
+    padding:30px !important;
+    padding-top:7px !important;
+    padding-bottom: 7px !important;
+}
+
+.eccent_nav_social {
+    display: flex;
+    flex-flow: row wrap;
+    width:100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    position: relative;
+    box-sizing: border-box;
+    margin-top:17px;
+}
+
+.eccemt_nav_follow {
+    display:block;
+    width:100%;
+    padding-right:30px;
+    padding-left: 30px;
+    color: #FFF;
+    margin-top:35px !important;
+    margin-bottom:0 !important;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    
+}
+
+.eccent_nav_social a {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    line-height: 35px;
+    text-align: center;
+}
+
+.eccent_nav_social a:hover, .eccent_nav_social a:active {
+    background-color:#FFF;
+    transform: scale(1.15);
+}
+
+.eccent_nav_social a:hover img {
+    filter: invert(4%) sepia(5%) saturate(178%) hue-rotate(315deg) brightness(93%) contrast(93%);
+}
+
+.eccent_nav_social a img {
+    display: inline-block;
+    position: absolute;
+    height: 15px;
+    width: auto;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    filter: invert(100%) sepia(5%) saturate(7500%) hue-rotate(289deg) brightness(106%) contrast(104%);
+}
+
+.eccent_social_facebook {
+    border-color:#3B5998 !important;
+}
+
+.eccent_social_facebook img {
+    filter: invert(32%) sepia(8%) saturate(4464%) hue-rotate(184deg) brightness(95%) contrast(83%) !important;
+}
+
+.eccent_social_facebook:hover, .eccent_social_facebook:active {
+    background-color: #3B5998 !important;
+}
+
+.eccent_social_facebook:hover img, .eccent_social_facebook:active img {
+    filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(112deg) brightness(101%) contrast(100%) !important;
+}
+
+.eccent_social_instagram {
+    border-color:#ef3868 !important;
+}
+
+.eccent_social_instagram img {
+    filter: invert(33%) sepia(79%) saturate(2498%) hue-rotate(323deg) brightness(95%) contrast(96%) !important;
+}
+
+.eccent_social_instagram:hover, .eccent_social_instagram:active {
+    background-color: #ef3868 !important;
+}
+
+.eccent_social_instagram:hover img, .eccent_social_instagram:active img {
+    filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(112deg) brightness(101%) contrast(100%) !important;
+}
+
+.eccent_social_twitter {
+    border-color:#33ccff !important;
+}
+
+.eccent_social_twitter img {
+    filter: invert(70%) sepia(48%) saturate(2990%) hue-rotate(165deg) brightness(104%) contrast(101%) !important;
+}
+
+.eccent_social_twitter:hover, .eccent_social_twitter:active {
+    background-color: #33ccff !important;
+}
+
+.eccent_social_twitter:hover img, .eccent_social_twitter:active img {
+    filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(112deg) brightness(101%) contrast(100%) !important;
+}
+
+.eccent_social_linkedin {
+    border-color:#007bb7 !important;
+}
+
+.eccent_social_linkedin img {
+    filter: invert(27%) sepia(80%) saturate(2288%) hue-rotate(180deg) brightness(91%) contrast(101%) !important;
+}
+
+.eccent_social_linkedin:hover, .eccent_social_linkedin:active {
+    background-color: #007bb7 !important;
+}
+
+.eccent_social_linkedin:hover img, .eccent_social_linkedin:active img {
+    filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(112deg) brightness(101%) contrast(100%) !important;
+}
+
+.eccent_social_youtube {
+    border-color:#dd0000 !important;
+}
+
+.eccent_social_youtube img {
+    filter: invert(10%) sepia(78%) saturate(7228%) hue-rotate(7deg) brightness(92%) contrast(119%) !important;
+}
+
+.eccent_social_youtube:hover, .eccent_social_youtube:active {
+    background-color: #dd0000 !important;
+}
+
+.eccent_social_youtube:hover img, .eccent_social_youtube:active img {
+    filter: invert(100%) sepia(0%) saturate(7489%) hue-rotate(112deg) brightness(101%) contrast(100%) !important;
+}
+
+.eccent_nav_fixed_logo_container {
+    display:block;
+    width: 100%;
+    height:auto;
+    position: relative;
+    padding-top:43px;
+    padding-bottom:15px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.eccent_footer {
+    display: block;
+    position: relative;
+    width:100%;
+    padding-top:50px;
+    padding-bottom: 50px;
+    background-color: #222;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-image:url(img/footerwallpaper.jpg);
+}
+
+.eccemt_footer_overlay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #043146;
+    opacity: 0.82;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+
+.eccent_footer_ul {
+    display: flex;
+    flex-flow: column wrap;
+    list-style-type: none;
+    padding:0 !important;
+}
+
+.eccent_footer_ul li {
+  display: block;
+  width:100%;
+  height: auto;
+  padding:0 !important;
+  padding-top:7px !important;
+  padding-bottom: 7px !important;
+  margin-bottom: 3px !important;
+}
+
+.eccent_footer_ul li a {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height:100%;
+    font-size: 15px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-transform: capitalize;
+}
+
+.eccent_footer_ul li a:hover, .eccent_footer_ul li a:active {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.eccent_footer_title {
+    color: #FFF;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    margin:0;
+    margin-bottom: 12px !important;
+    text-transform: uppercase;
+}
+
+.eccent_footer_column {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.eccent_footer_paragraph {
+    display: block;
+    width:100%;
+    height: auto;
+    font-size: 15px;
+    line-height: 25px;
+    color:rgba(255, 255, 255, 0.9) !important;
+    padding: 0;
+    margin:0;
+    margin-bottom:17px;
+    text-decoration: none;
+}
+
+.eccent_footer_link:hover, .eccent_footer_link:active {
+  color: #FFF !important;
+}
+
+.eccent_footer_phone {
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.eccent_footer_phone_link {
+    color:#FFF;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.eccent_footer_phone_link:hover, .eccent_footer_phone_link:active {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.eccent_footer_phone:hover, .eccent_footer_phone:active {
+  transform: scale(1.2);
+}
+
+.eccent_footer_divider {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #00dafa;
+    margin-bottom: 17px;
+}
+
+.eccent_footer_apply {
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color:#FFF;
+    background-color:#0f75bc;
+    border-radius: 17px;
+    padding:17px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.eccent_footer_apply:hover, .eccent_footer_apply:active {
+    opacity:0.7;
+    color:#FFF;
+}
+
+.eccent_footer_contact_icon {
+    display: inline-block;
+    width:20px;
+    height: 20px;
+    margin-right: 7px;
+    filter: invert(100%) sepia(0%) saturate(7450%) hue-rotate(149deg) brightness(118%) contrast(112%);
+}
+
+.eccent_footer_contact_span {
+    display: inline-block;
+    width: calc(100% - 20px - 12px);
+}
+
+.eccent_footer_social {
+    display: flex;
+    width:100%;
+    margin-top: 30px;
+    flex-flow: row wrap;
+}
+
+.eccent_footer_social a {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    width: 40px;
+    height:40px;
+    border: 1.5px solid #FFF;
+    margin-right: 7px;
+}
+
+.eccent_footer_social a:hover {
+    background-color: #FFF;
+}
+
+.eccent_footer_social a:hover img {
+    filter: invert(13%) sepia(87%) saturate(859%) hue-rotate(166deg) brightness(93%) contrast(98%) !important;
+}
+
+.eccent_footer_social a img {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: invert(100%) sepia(95%) saturate(20%) hue-rotate(315deg) brightness(104%) contrast(106%);
+}
+
+.eccent_trademark {
+    display: block;
+    width:100%;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: #111;
+}
+
+.eccent_trademark_text {
+    margin:0;
+    padding:0;
+    display: block;
+    width:100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.eccent_featured_image img {
+  display: block;
+  width:100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.eccent_featured_bottom img {
+    object-position: center bottom;
+}
+
+.eccent_featured_top img {
+    object-position: center top;
+}
+
+input:active, input:focus, textarea:active, textarea:focus{
+  box-shadow: initial !important;
+  background-color:#EEE !important;
+}
+
+.eccent_posts .elementor-pagination {
+    padding-top:30px;
+}
+
+.eccent_posts .elementor-pagination .page-numbers {
+    padding:15px;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 3px;
+    color: #222;
+    box-sizing: border-box;
+    margin-right: 3px !important;
+    margin-left: 0 !important;
+}
+
+.eccent_posts .elementor-pagination .page-numbers:not(.current):hover {
+    background-color:#EEE;
+}
+
+
+.eccent_posts .elementor-pagination .page-numbers.current {
+    color:#FFF;
+    background-color:#007bb7;
+}
+
+.eccent_the_post a {
+  color:#0F75BC !important;
+}
+
+.job_filters .search_jobs {
+    padding: 15px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    overflow: hidden;
+    background-color: #f1f1f1 !important;
+}
+
+.job_filters {
+    border-radius: 7px;
+    overflow: hidden;
+    margin-bottom:20px;
+}
+
+.job_listings li.job_listing {
+    border: 1px solid #CCC !important;
+    border-radius: 3px;
+    margin-bottom: 12px !important;
+}
+
+.job_listings li.job_listing a {
+    padding-top:25px !important;
+    padding-bottom: 25px !important;
+}
+
+.job_listings li.job_listing .position h3 {
+    color:#0f75bc !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;;
+}
+
+.job_listings li.job_listing .company strong {
+    color:#222 !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 17px !important;;
+}
+
+.job_listings li.job_listing .location {
+    color:#222 !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;;
+}
+
+.job_listings li.job_listing .date time {
+    color:#222 !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 17px !important;;
+}
+
+.job_listings li.job_listing .application-deadline   {
+    color:#222 !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    line-height: 17px !important;;
+}
+
+.job_listings li.job_listing .job-type   {
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;;
+}
+
+.job_filters .search_jobs div.search_submit input[type="submit"] {
+    border: none !important;
+    border-radius: 15px !important;
+    color:#FFF;
+    background-color: #0f75bc;
+    font-size:14px;
+    min-height: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.job_filters .search_jobs div.search_submit input[type="submit"]:hover, .job_filters .search_jobs div.search_submit input[type="submit"]:active, .job_filters .search_jobs div.search_submit input[type="submit"]:focus {
+  border: none !important;
+  outline: none !important;
+  background-color: rgba(15, 116, 188, 0.70) !important;
+  
+}
+
+.job_filters .search_jobs div.search_keywords input, .job_filters .search_jobs div.search_location input {
+  border-radius: 7px !important;
+  border-color:#CCC !important;
+}
+
+.job-listing-meta .job-type {
+  padding: 12px !important;
+  border-radius: 3px;
+  
+}
+
+.job-listing-meta li {
+    margin-right: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+.job-listing-meta .date-posted time {
+    color:#0f75bc;
+}
+
+.job-listing-meta li:before {
+    color:#0f75bc;
+    margin-right: 3px !important;
+}
+
+.job-listing-meta .google_map_link {
+    color:#0f75bc;
+}
+
+.job-listing-meta .google_map_link:hover, .job-listing-meta .google_map_link:active, .job-listing-meta .google_map_link:focus {
+    color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.single_job_listing .company .name a {
+    color:#0f75bc;
+}
+
+.single_job_listing .company .name a:hover, .single_job_listing .company .name a:active, .single_job_listing .company .name a:focus {
+    color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.job-listing-meta .application-deadline {
+    color:#0f75bc;
+}
+    
+.job-listing-meta .application-deadline:before {
+    color:#0f75bc;
+}
+
+.job-listing-meta .application-deadline label {
+    color:#0f75bc !important;
+}
+
+.job-listing-meta .application-deadline:hover, .job-listing-meta .application-deadline:active, .job-listing-meta .application-deadline:focus {
+    color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.job_application.application input[type="button"], .wp_job_manager_send_application_button, .apply_with_resume input[type="submit"] {
+  padding: 15px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  border: none !important;
+  background-color: rgba(15, 116, 188, 1.0) !important;
+  color:#FFF;
+  border-radius: 15px !important;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.single_job_listing .meta li {
+    color:#0f75bc;
+}
+
+.job_application.application input[type="button"]:hover, .job_application.application input[type="button"]:active, .job_application.application input[type="button"]:focus {
+    border: none !important;
+    outline: none !important;
+    background-color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.wp_job_manager_send_application_button:hover, .wp_job_manager_send_application_button:active, .wp_job_manager_send_application_button:focus {
+    border: none !important;
+    outline: none !important;
+    background-color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.apply_with_resume input[type="submit"]:hover, .apply_with_resume input[type="submit"]:active, .apply_with_resume input[type="submit"]:focus {
+    border: none !important;
+    outline: none !important;
+    background-color: rgba(15, 116, 188, 0.70) !important;
+}
+
+main.job_listing .entry-title, .post-438 .entry-title {
+    font-weight: 700;
+    font-size: 42px !important;
+    line-height: 46px !important;
+    margin-top:0 !important;
+}
+
+.account-sign-in a, .applying_for a {
+    color:#0f75bc;
+}
+
+.field.ui-sortable a {
+    color:#0f75bc; 
+}
+
+.resume-submitted a {
+    color:#0f75bc; 
+}
+
+
+.resume-submitted a:hover, .resume-submitted a:active, .resume-submitted a:focus {
+    color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.post-438 .job-manager-form p input[type="submit"], .job_listing_preview_title input[type="submit"] {
+    padding: 15px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  border: none !important;
+  background-color: #0f75bc;
+  color:#FFF;
+  border-radius: 15px !important;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.job_listing_preview_title input[type="submit"]:hover, .job_listing_preview_title input[type="submit"]:active, .job_listing_preview_title input[type="submit"]:focus {
+    border: none !important;
+    outline: none !important;
+    background-color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.post-438 .job-manager-form p input[type="submit"]:hover, .post-438 .job-manager-form p input[type="submit"]:active, .post-438 .job-manager-form p input[type="submit"]:focus {
+    border: none !important;
+    outline: none !important;
+    background-color: rgba(15, 116, 188, 0.70) !important;
+}
+
+.job_listing_preview_title h2 {
+    display: none;
+}
+
+.job_listing_preview_title {
+  padding:15px !important;
+}
+
+.resume_preview h1 {
+    font-size: 24px !important;
+    line-height: 28px !important;
+    color:#222 !important;
+    font-weight: 700 !important;
+    margin-top: 30px !important;
+}
+
+.resume_preview .location a {
+    color:#0f75bc; 
+}
+
+.eccent_selling_column {
+    position: relative;
+}
+
+.eccent_selling_overlay {
+    position: absolute;
+    height:35px;
+    line-height: 35px !important;
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    left:0;
+    display: block !important;
+    width:100% !important;
+}
+
+.eccent_custom_deal {
+    background-color: rgb(15, 117, 188) !important;
+}
+
+.eccent_custom_deal .elementor-image-box-content {
+    display: flex !important;
+    flex-flow: row wrap !important;
+}
+
+.eccent_custom_deal .elementor-image-box-content h3, .eccent_custom_deal .elementor-image-box-content p {
+    margin:0 !important;
+    padding: 7px !important;
+    text-align: center !important;
+}
+
+.eccent_custom_deal .elementor-image-box-content h3 {
+    width: 60% !important;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.eccent_custom_deal .elementor-image-box-content p {
+    width: 40% !important;
+}
+
+#wplc_wrapper call-us {
+    right: 30px !important;
+    bottom:30px !important;
+}
+
+.button_3Mr5m:after {
+    content:'CHAT';
+    font-size: 14px;
+    line-height: 16px;
+    position: absolute;
+    top:0;
+    left:0;
+    color:#FFF;
+}
+
+.eccent_team_member {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color:#FFF;
+}
+
+.eccent_team_member:hover p {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.eccent_team_member p {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  color:#FFF;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  text-align: center;
+  padding:20px;
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 400;
+  overflow:hidden;
+}
+
+.eccent_team_member:hover p span {
+    transform: translateY(0) !important;
+    opacity:1 !important;
+}
+
+.eccent_team_member p span {
+    -webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-ms-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+    display: block;
+    height: auto;
+    width: 100%;
+    position: relative;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    color:#FFF;
+    opacity:0;
+    transform: translateY(200px);
+}
+
+.reviews_hero_content {
+    display: block;
+    position: absolute;
+    left:0;
+    bottom:0;
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    padding: 30px !important;
+}
+
+.reviews_hero_content .elementor-column-wrap {
+    position: relative;
+    max-width: 992px !important;
+    margin:0 auto;
+}
+
+.reviews_hero_section {
+    position: relative;
+}
+
+.eccent_calc {
+    display: flex;
+    flex-flow: column wrap;
+    width:100%;
+    overflow:hidden;
+    height:auto;
+}
+
+.eccent_calc p {
+    display: flex;
+    flex-flow: row wrap;
+    width:100%;
+    position: relative;
+    margin-bottom: 12px !important;
+}
+
+.eccent_calc_imageholder {
+    display: inline-block;
+    position: relative;
+    width:55px;
+    height:55px;
+    box-sizing: border-box;
+    background-color: #0f75bc;
+    overflow: hidden;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.eccent_calc_imageholder img {
+  display:block;
+  width:20px;
+  height:20px;
+  object-fit:cover;
+  object-position: center;
+  filter: invert(99%) sepia(1%) saturate(1977%) hue-rotate(180deg) brightness(112%) contrast(101%);
+  box-sizing:border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.eccent_calc input {
+  display: inline-block;
+  width:calc(100% - 55px) !important;
+  height: 55px !important;
+  font-size:14px !important;
+  line-height: 55px !important;
+  box-sizing: border-box !important;
+  border-radius:0px !important;
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+  border-left: 0px !important;
+  background-color: #EEE !important;
+}
+
+.eccent_calculator_button {
+    outline: none !important;
+    display:block;
+    width:100%;
+    font-size:15px;
+    line-height: 17px;
+    background-color:#999;
+    color:#FFF;
+    text-align: center;
+    padding: 7px !important;
+    padding-top:12px !important;
+    padding-bottom: 12px !important;
+    border:0 !important;
+    border-radius: 5px !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.eccent_calculator_button:hover, .eccent_calculator_button:active, .eccent_calculator_button:focus {
+    background-color: #0f75bc !important;
+}
+
+.eccemt_calc_output p {
+    width:100% !important;
+    margin:0 !important;
+}
+
+.eccemt_calc_output span {
+    display: block;
+    width:100% !important;
+    text-align: center !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
+    color:#999;
+    margin:0 !important;
+}
+
+.eccent_calculator_opt {
+    display: block;
+    position: fixed;
+    width:60px;
+    height:60px;
+    position: fixed;
+    border-radius: 50%;
+    overflow: hidden;
+    text-decoration: none;
+    background-color:#0f75bc;
+    z-index: 99999;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.eccent_calculator_opt img {
+  display: block;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  filter: invert(99%) sepia(1%) saturate(1977%) hue-rotate(180deg) brightness(112%) contrast(101%);
+  object-fit: contain;
+  object-position: center;
+}
+
+.eccent_wpforms_radio ul {
+    display: flex !important;
+    flex-flow: column wrap !important;
+    width:100% !important;
+    max-width: 768px !important;
+    list-style-type: none !important;
+    padding:0 !important;
+    margin:0 auto;
+    margin-bottom: 12px !important;
+}
+
+.eccent_funnel_form .elementor-field-type-radio .elementor-field-option, .wpforms-form ul li {
+  display: block !important;
+  position: relative;
+  width: 100% !important;
+  padding:25px !important;
+  padding-top:20px !important;
+  padding-bottom: 20px !important;
+  margin-bottom:12px !important;
+  background-color:#EEE;
+  border-radius: 5px !important; 
+}
+
+.eccent_wpforms_radio ul li label {
+    font-size: 18px !important;
+    line-height: 45px !important;
+    font-weight: 500 !important;
+    color:#222;
+}
+
+.eccent_funnel_form .elementor-field-type-radio .elementor-field-option input, .eccent_wpforms_radio ul li input[type="radio"] {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    opacity:0;
+    cursor: pointer;
+}
+
+.eccent_radio_highlight, .wpforms-selected {
+    background-color: #0f75bc !important;
+}
+
+.eccent_radio_highlight label, .wpforms-selected label {
+  color: #FFF !important;
+}
+
+.eccent_funnel_form h3 {
+  display: block;
+  width:100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px !important;
+  line-height: 30px !important;
+  margin-top:0 !important;
+  margin-bottom: 12px !important;
+  color: #222 !important;
+}
+
+.eccent_funnel_form h5 {
+    display: block;
+    width:100%;
+    text-align: center;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    color:#666 !important;
+}
+
+.eccent_funnel_form .e-form__buttons {
+    margin-top:20px;
+}
+
+.eccent_checkout_container h3, .eccent_checkout_container .woocommerce-order h2 {
+  font-weight: 700 !important;
+  font-size: 28px !important;
+  line-height: 32px !important;
+  margin-bottom: 30px !important;
+  text-transform: uppercase;
+  color:#222 !important;
+}
+
+.eccent_checkout_container #order_review_heading {
+    margin-top:50px !important
+}
+
+.woocommerce form .form-row textarea {
+    height: 150px !important;
+}
+
+.eccent_checkout_container input[type="text"], .eccent_mepr_fields input[type="text"], .eccent_mepr_fields input[type="password"], .eccent_mepr_fields input[type="email"], .wpforms-field-row-block input[type="text"], .wpforms-field input[type="email"], .wpforms-field input[type="text"], .wpforms-field input[type=number], .wpforms-field textarea, .woocommerce form .form-row textarea {
+    padding:15px !important;
+    padding-top:7px !important;
+    padding-bottom: 7px !important;
+    font-size: 14px !important;
+    line-height: 22px !important;
+    border: 0.5px solid #AAAAAA !important;
+    border-radius: 15px !important;
+    min-height: 52px !important;
+}
+
+.eccent_checkout_container .select2-selection, .eccent_mepr_fields select, .wpforms-field select  {
+    padding:15px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+    position: relative;
+    font-size: 14px !important;
+    line-height: 52px !important;
+    border: 0.5px solid #AAAAAA !important;
+    border-radius: 15px !important;
+    box-sizing: border-box;
+}
+
+/* .eccent_mepr_fields .cc-error {
+    display: none !important;
+}
+
+.eccent_mepr_fields .mepr-form-has-errors {
+    display: none !important;
+} */
+
+.mepr-nav-item a {
+    text-transform: uppercase !important;
+    box-sizing: border-box;
+    font-size: 17.5px;
+    line-height: 20px !important;
+    font-weight: 600;
+    color:#0F75BC;
+    letter-spacing: 0.7px;
+    padding-bottom: 7px;
+}
+
+.mepr-active-nav-tab a {
+    border-bottom: 2.5px solid #0F75BC;
+}
+
+.mepr-nav-item a:hover, .mepr-nav-item a:active, .mepr-nav-item a:focus {
+    opacity: 0.7;
+}
+
+.eccent_mepr_fields .mepr-nav-item {
+    margin-right: 15px !important;
+    padding: 0 !important;
+}
+
+.eccent_mepr_fields #mepr-account-nav {
+    margin-bottom:30px !important;
+}
+
+.eccent_mepr_fields #mepr-account-welcome-message {
+    margin-bottom: 30px !important;
+}
+
+.eccent_mepr_fields .mepr-newpassword-form label {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.eccent_mepr_fields .mepr-newpassword-form a {
+    margin-left: 5px !important;
+}
+
+.eccent_mepr_fields .mepr-newpassword-form .mepr-submit {
+    margin-right: 5px !important;
+}
+
+.eccent_mepr_fields .mp-form-label, .eccent_mepr_fields .mepr-newpassword-form label {
+    font-size: 14px;
+    line-height: 16px !important;
+    font-weight: 600;
+    padding-bottom: 9px !important;
+}
+
+.eccent_mepr_fields .cc-error {
+    font-size:10px;
+    line-height: 12px;
+    padding-left:7px !important;
+    font-weight: 400;
+}
+
+.eccent_mepr_fields input[type="submit"] {
+    padding:15px !important;
+    padding-right: 25px !important;
+    padding-left: 25px !important;
+    border-radius: 17px !important;
+    font-size:14px !important;
+    line-height: 16px !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    border:none !important;
+    background-color:#0f75bc !important;
+    color:#FFF !important;
+}
+
+.eccent_mepr_fields .mepr-login-actions a, .eccent_mepr_fields .mepr-account-change-password a, .eccent_mepr_fields .mepr-newpassword-form a {
+  color:#0f75bc;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.eccent_mepr_fields .mepr-login-actions a:hover, .eccent_mepr_fields .mepr-login-actions a:active, .eccent_mepr_fields .mepr-login-actions a:focus, .eccent_mepr_fields .mepr-account-change-password a:hover, .eccent_mepr_fields .mepr-account-change-password a:active, .eccent_mepr_fields .mepr-account-change-password a:focus, .eccent_mepr_fields .mepr-newpassword-form a:hover, .eccent_mepr_fields .mepr-newpassword-form a:active, .eccent_mepr_fields .mepr-newpassword-form a:focus {
+    opacity: 0.7;
+}
+
+.eccent_mepr_fields input[type="submit"]:hover, .eccent_mepr_fields input[type="submit"]:active {
+    opacity: 0.7;
+}
+
+.eccent_mepr_fields .mp-form-row {
+    margin-bottom: 17px !important;
+}
+
+.eccent_mepr_fields .mepr-account-form {
+    padding-top: 15px !important;
+}
+
+.mepr-form input.invalid, .mepr-form select.invalid, .mepr-form textarea.invalid, .mepr-form label.mepr-checkbox-field.invalid, .mepr-form div.mepr-checkboxes-field.invalid, .mepr-form div.mepr-radios-field.invalid {
+    background-color:#FFF !important;
+}
+
+.eccent_checkout_container .select2-selection:active, .eccent_checkout_container .select2-selection:focus, .eccent_mepr_fields select:active, .eccent_mepr_fields select:focus, .wpforms-field select:active, .wpforms-field select:focus {
+  background-color: #EEE !important;
+}
+
+.eccent_checkout_container .select2-selection .select2-selection__rendered {
+  position: absolute !important;
+  display: inline-block !important;
+  top: 50%;
+  left:15px;
+  transform:translateY(-50%);
+  color: #666 !important;
+}
+
+.eccent_checkout_container .select2-selection .select2-selection__arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.eccent_checkout_container .woocommerce-billing-fields__field-wrapper {
+  display: flex !important;
+}
+
+.eccent_checkout_container .woocommerce-billing-fields__field-wrapper .form-row-wide {
+  width:100% !important;
+}
+
+.eccent_checkout_container .woocommerce-billing-fields__field-wrapper .form-row {
+    float:none !important;
+    padding: 5px !important;
+    box-sizing: border-box !important;
+}
+
+.eccent_checkout_container .woocommerce-billing-fields__field-wrapper .form-row label {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-bottom:5px !important;
+  color:#222 !important;
+  text-transform: capitalize !important;
+  font-weight: 600 !important;
+}
+
+.eccent_checkout_container #add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
+    padding: 20px !important;
+    padding-top:30px !important;
+    padding-bottom: 30px !important;
+}
+
+.eccent_checkout_container .cart_item .product-name, .eccent_checkout_container .cart_item .product-total {
+    background-color: #0f75bc !important;
+    color:#FFF !important;
+}
+
+#add_payment_method #payment div.payment_box::before, .woocommerce-cart #payment div.payment_box::before, .woocommerce-checkout #payment div.payment_box::before {
+    border: 1em solid #CCC !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+    border-top-color: transparent !important;
+}
+
+#add_payment_method #payment div.payment_box, .woocommerce-cart #payment div.payment_box, .woocommerce-checkout #payment div.payment_box {
+    background-color: #CCC !important;
+    border-radius: 3px !important;
+}
+
+.eccent_checkout_container .payment_box {
+    padding: 12px !important;
+    margin-top: 30px !important;
+}
+
+.eccent_checkout_container .payment_box #stripe-payment-data a {
+    color: #0f75bc !important;
+}
+
+.eccent_checkout_container .payment_box #stripe-payment-data a:hover {
+    text-decoration: underline;
+}
+
+.eccent_checkout_container .woocommerce-privacy-policy-text a {
+    color: #0f75bc !important;
+}
+
+.eccent_checkout_container .woocommerce-privacy-policy-text a:hover {
+  text-decoration: underline;
+}
+
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+  padding:15px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  border-radius: 17px !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  background-color: #0f75bc !important;
+}
+
+.woocommerce #payment #place_order:hover, .woocommerce-page #payment #place_order:hover, .woocommerce #payment #place_order:active, .woocommerce-page #payment #place_order:active, .woocommerce #payment #place_order:focus, .woocommerce-page #payment #place_order:focus {
+  opacity: 0.7 !important;
+}
+
+.eccent_checkout_container .woocommerce-order .woocommerce-table__product-name a {
+  color:#0f75bc !important;
+}
+
+.eccent_checkout_container .woocommerce-order .woocommerce-table__product-name a:hover {
+  text-decoration: underline;
+}
+
+.eccent_checkout_container .woocommerce-customer-details dl {
+    display: none !important;
+}
+
+.eccent_checkout_container .woocommerce-customer-details dl dt  {
+    font-weight: 700;
+}
+
+.eccent_nav_menu_icon a {
+    position: relative;
+    text-indent: 30px !important;
+}
+
+.eccent_nav_menu_icon a:before {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left:30px;
+    top:50%;
+    transform: translateY(-50%);
+    opacity:0.9;
+    background-size: cover;
+    filter: invert(99%) sepia(0%) saturate(7498%) hue-rotate(71deg) brightness(114%) contrast(101%);
+}
+
+.eccent_nav_menu_about a:before {
+    background-image: url('svg/nav/question.svg');
+}
+
+.eccent_nav_menu_howitworks a:before {
+    background-image: url('svg/nav/car-key.svg');
+}
+
+.eccent_nav_menu_reviews a:before {
+    background-image: url('svg/nav/chat.svg');
+}
+
+.eccent_nav_menu_faq a:before {
+    background-image: url('svg/nav/question.svg');
+}
+
+.eccent_nav_menu_blog a:before {
+    background-image: url('svg/nav/writing-tool.svg');
+}
+
+.eccent_nav_menu_career a:before {
+    background-image: url('svg/nav/success.svg');
+}
+
+.eccent_nav_menu_contact a:before {
+    background-image: url('svg/nav/email.svg');
+}
+
+.mp-form-submit {
+    display: block;
+    width:100% !important;
+}
+
+.eccent_mepr_fields .mepr_spacer {
+    display: block !important;
+    width:100% !important;
+    line-height: 0 !important;
+    padding-top:25px !important;
+}
+
+.wpforms-page-indicator-page-progress-wrap {
+    background-color: #EEE !important;
+    height: 4px !important;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.wpforms-page-indicator-page-progress {
+    height: 4px !important;
+}
+
+.wpforms-page-indicator-steps {
+    display: none;
+}
+
+.wpforms-conditional-hide {
+    display: none !important;
+}
+
+.eccent_revieworder {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0.2px solid #DDD;
+    background-color: #EEE !important;
+}
+
+.eccent_revieworder_column {
+    display: flex;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+    height:auto;
+    padding:0;
+    
+}
+
+.eccent_revieworder_column .eccent_revieworder_title, .eccent_revieworder_column .eccent_revieworder_value {
+    display: block;
+    width:100%;
+    padding:7px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.eccent_revieworder_column .eccent_revieworder_title {
+    color:#FFF;
+    background-color: #0f75bc;
+    font-weight: 600;
+}
+
+.eccent_revieworder_value a {
+    color: #0f75bc !important;
+}
+
+.eccent_revieworder_value a:hover, .eccent_revieworder_value a:active, .eccent_revieworder_value a:focus {
+    opacity: 0.7;
+}
+
+.eccent_revieworder_column .eccent_revieworder_value {
+    color:#222;
+    background-color: #FFF;
+    font-weight: 400;
+}
+
+.eccent_revieworder_container h3 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin:0 !important;
+    margin-bottom: 15px !important;
+    margin-top: 25px !important;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+}
+
+.eccent_revieworder_container h2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin:0 !important;
+    margin-bottom: 12px !important;
+    margin-top: 45px !important;
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+}
+
+.eccent_hide_field {
+    pointer-events: none;
+    background-color: #EEE !important;
+}
+
+#menu-item-710 a {
+    text-transform: initial !important;
+}
+
+.wheelwish_depositdisclaimer {
+    display: block;
+    width: 100%;
+}
+
+
+.wheelwish_depositdisclaimer h4 {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    color:#222;
+    text-align: left;
+    margin-top: 25px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.wheelwish_depositdisclaimer p {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 23px;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.eccent_thankyou_buttons {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.eccent_thankyou_buttons a {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background-color: #0f75bc;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color:#FFF !important;
+    text-transform: uppercase;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+}
+
+.eccent_thankyou_buttons a:hover, .eccent_thankyou_buttons a:active, .eccent_thankyou_buttons a:focus {
+    opacity: 0.7;
+}
+
+/* tidio-chat iframe { bottom: 20px !important; }
+@media only screen and (max-width: 980px) {
+    #tidio-chat iframe { bottom: 0px !important; }
+} */
+
+@media(max-width: 1024.9px) {
+    .show_content_container {
+        left: 280px !important;
+        overflow: hidden !important;
+    }
+
+}
+
+@media(max-width: 767.9px) {
+
+    .eccent_calculator_opt {
+        bottom: 100px;
+        right:10px;
+    }
+
+    .woocommerce-billing-fields__field-wrapper {
+      flex-flow: column wrap;
+    }
+
+    .woocommerce-billing-fields__field-wrapper .form-row-first {
+        width: 100% !important;
+    }
+
+    .woocommerce-billing-fields__field-wrapper .form-row-last {
+        width: 100% !important;
+    }
+
+    .eccent_funnel_form .e-form__buttons {
+        flex-flow: column wrap !important;
+    }
+
+    .e-form__buttons__wrapper {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .e-form__buttons__wrapper input, .e-form__buttons__wrapper button {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .eccent_featured_image img {
+        height: 300px;
+    }
+
+    .eccent_footer {
+        background-position: 20% center !important;
+    }
+
+    .deal_image img {
+        height: 200px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .selling_image img {
+        width:100% !important;
+        height: 200px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .eccent_nav_actions li a {
+        position: relative;
+        border-color:#0f75bc;
+    }
+
+    .eccent_nav_actions li a img {
+        display:inline-block;
+        position: absolute;
+        width:25px;
+        height: auto;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        filter: invert(32%) sepia(57%) saturate(4961%) hue-rotate(188deg) brightness(90%) contrast(88%);
+    }
+
+    .eccent_nav_actions li:last-of-type a img {
+        filter: invert(93%) sepia(91%) saturate(334%) hue-rotate(200deg) brightness(111%) contrast(101%);
+    }
+
+    .post-438 .job-manager-form p input[type="submit"], .job_listing_preview_title input[type="submit"] {
+        margin-bottom: 12px;
+    }
+
+    .job_listing_preview_title {
+        display: flex !important;
+        flex-flow: column wrap !important;
+    }
+
+    .job-listing-meta .job-type {
+      display: block;
+      width:90%;
+    }
+
+    main.job_listing, .post-438 {
+        width:100% !important;
+        max-width:calc(1400px + 60px) !important;
+        box-sizing: border-box;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        padding-top: 90px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .eccent_posts .elementor-post__thumbnail__link {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    .eccent_posts .elementor-post__thumbnail {
+        display: block !important;
+        width:100% !important;
+    }
+
+    .eccent_posts .elementor-post__thumbnail img {
+        display: block !important;
+        width:100% !important;
+        height:300px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .eccent_posts .elementor-post {
+        flex-flow: column wrap;
+        box-sizing: border-box;
+    }
+
+    .eccent_posts .elementor-post__text {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .eccent_container {
+      padding-left:30px;
+      padding-right: 30px;
+      max-width:calc(1400px + 60px);
+    }
+
+    .eccent_column_half:first-of-type {
+        width:100%;
+      }
+
+      .eccent_column_half:last-of-type {
+        width:100%;
+      }
+
+      .eccent_nav_actions {
+        padding: 0 !important;
+        padding-top: 15px !important;
+        text-align: center;
+    }
+
+    .eccent_nav_actions li {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        margin-right: 7px;
+    }
+
+    .eccent_nav_actions li a {
+        padding:0;
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        border: 1px solid #0099cc;
+    }
+
+      .eccent_nav_actions li a span {
+          display: none;
+      }
+
+      .eccent_column_half {
+        justify-content: center;
+      }
+
+      .eccent_logo_holder a {
+        display: inline-block;
+        width: calc(100% - 40px - 15px) !important;
+        max-width: 400px;
+        height: auto !important;
+    }
+
+      .eccent_logo_holder a img {
+        display: inline-block;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+      .eccent_menu_opt {
+        margin-right: 15px;
+      }
+
+      .move_content_container {
+        top:46px !important;
+        height:calc(100% - 46px) !important;
+    }
+
+    .eccent_footer_column {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    .eccent_footer_column:last-of-type {
+        padding-bottom: 0 !important;
+    }
+
+    .eccent_column_extended {
+        width:100%;
+        background-color:#FFF;
+        height:auto;
+        padding: 30px;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        top:0px !important;
+        left:0px !important;
+        z-index: 10;
+        -webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.2); 
+        box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.2);
+    }
+
+    .job_filters .search_jobs div.search_keywords, .job_filters .search_jobs div.search_location, .job_filters .search_jobs div.search_submit {
+        display: inline-block !important;
+        width: 100% !important;
+        padding:0 !important;
+        margin-bottom: 7px !important
+    }
+    
+    .search_jobs {
+        display: flex !important;
+        flex-flow: row wrap;
+    }
+
+    .eccent_revieworder {
+        flex-flow: column wrap;
+    }
+
+    .eccent_revieworder_column {
+        width: 100%;
+    }
+
+}
+
+@media(min-width: 768px) {
+    .eccent_calculator_opt {
+        bottom: 122px;
+        right:25px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1024.9px) {
+    .woocommerce-billing-fields__field-wrapper .form-row-first {
+        width: 50% !important;
+    }
+
+    .woocommerce-billing-fields__field-wrapper .form-row-last {
+        width: 50% !important;
+    }
+
+    .woocommerce-billing-fields__field-wrapper {
+        flex-flow: row wrap;
+    }
+
+    .eccent_featured_image img {
+        height: 350px;
+    }
+
+    .eccent_footer {
+        background-position: 30% 60% !important;
+    }
+
+    .deal_image img {
+        height: 125px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .selling_image img {
+        width:100% !important;
+        height: 115px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .eccent_nav_actions li a img {
+        display: none !important;
+    }
+
+    main.job_listing, .post-438 {
+        width:100% !important;
+        max-width:calc(1400px + 100px) !important;
+        box-sizing: border-box;
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+        padding-top: 90px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .eccent_menu_opt {
+        margin-right: 15px;
+    }
+
+    .eccent_container {
+        padding-left:50px;
+        padding-right: 50px;
+        max-width:calc(1400px + 100px);
+      }
+
+      .eccent_column_half:first-of-type {
+        width:45%;
+      }
+
+      .eccent_column_half:last-of-type {
+        width:55%;
+      }
+
+      .eccent_nav_actions li {
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+
+    .eccent_nav_actions li a {
+        padding: 12px;
+        padding-right: 17px;
+        padding-left: 17px;
+        margin-left: 5px;
+        border-radius: 17px;
+      }
+
+    .eccent_nav_actions {
+        padding: 0 !important;
+        text-align: right;
+    }
+
+    .eccent_nav_actions li a span {
+        display: inline-block;
+        width:auto;
+        height:auto;
+    }
+
+    .eccent_logo_holder a img {
+        display: inline-block;
+        width: 230px;
+        height: auto;
+    }
+
+    .move_content_container {
+        top:46px !important;
+        height:calc(100% - 46px);
+    }
+
+    .eccent_footer_column {
+        width: 50%;
+        padding: 30px;
+    }
+
+    .eccent_column_extended {
+        width:120%;
+        background-color:#FFF;
+        height:270px;
+        padding: 30px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        top:50%;
+        left:0;
+        transform: translateY(-50%);
+        z-index: 10;
+        -webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.2); 
+        box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.2);
+    }
+
+    .job_filters .search_jobs div.search_keywords, .job_filters .search_jobs div.search_location, .job_filters .search_jobs div.search_submit {
+        display: inline-block !important;
+        width: calc(33% - 7px) !important;
+        padding:0 !important;
+        margin-right: 7px !important
+    }
+    
+    .search_jobs {
+        display: flex !important;
+        flex-flow: row wrap;
+    }
+
+    .job_listing_preview_title {
+        display: flex !important;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+    }
+
+    .post-438 .job-manager-form p input[type="submit"], .job_listing_preview_title input[type="submit"] {
+        margin-right: 7px;
+    }
+
+    .eccent_revieworder {
+        flex-flow: row wrap;
+    }
+
+    .eccent_revieworder_column {
+        width: 50%;
+    }
+
+}
+
+@media (min-width: 1025px) {
+    .woocommerce-billing-fields__field-wrapper .form-row-first {
+        width: 50% !important;
+    }
+
+    .woocommerce-billing-fields__field-wrapper .form-row-last {
+        width: 50% !important;
+    }
+
+    .woocommerce-billing-fields__field-wrapper {
+        flex-flow: row wrap;
+    }
+
+    .show_content_container {
+        left: 280px !important;
+        overflow: hidden !important;
+    }
+
+    .eccent_featured_image img {
+        height: 350px;
+    }
+
+    .deal_image img {
+        height: 240px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .selling_image img {
+        width:100% !important;
+        height: 185px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .eccent_nav_actions li a img {
+        display: none !important;
+    }
+
+    main.job_listing, .post-438 {
+        width:100% !important;
+        max-width:calc(1400px + 140px) !important;
+        box-sizing: border-box;
+        padding-left: 70px !important;
+        padding-right: 70px !important;
+        padding-top: 90px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .eccent_menu_opt {
+        margin-right: 15px;
+    }
+
+    .eccent_column_half:first-of-type {
+        width:40%;
+    }
+
+    .eccent_column_half:last-of-type {
+        width:60%;
+    }
+
+    .eccent_container {
+        padding-left:70px;
+        padding-right: 70px;
+        max-width:calc(1400px + 140px);
+      }
+
+      .eccent_nav_actions {
+        padding: 0 !important;
+        text-align: right;
+    }
+
+      .eccent_nav_actions li a {
+        padding: 12px;
+        padding-right: 17px;
+        padding-left: 17px;
+        margin-left: 5px;
+        border-radius: 17px;
+      }
+
+      .eccent_logo_holder a img {
+        display: inline-block;
+        width: 230px;
+        height: auto;
+    }
+
+    .eccent_nav_actions li {
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+
+    .eccent_nav_actions li a span {
+        display: inline-block;
+        width:auto;
+        height:auto;
+    }
+
+    .move_content_container {
+        top:32px !important;
+        height:calc(100% - 32px);
+    }
+
+    .eccent_footer_column {
+        width: 25%;
+        padding: 20px;
+    }
+
+    .eccent_column_extended {
+        width:120%;
+        background-color:#FFF;
+        height:280px;
+        padding: 30px;
+        padding-left:20px !important;
+        padding-right: 20px !important;
+        /* top:50% !important;
+        left:0;
+        transform: translateY(-50%) !important; */
+        z-index: 10;
+        -webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.2); 
+        box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.2);
+    }
+
+    .eccent_sidebyside .elementor-row {
+        align-items: center;
+    }
+
+    .job_filters .search_jobs div.search_keywords, .job_filters .search_jobs div.search_location, .job_filters .search_jobs div.search_submit {
+        display: inline-block !important;
+        width: calc(33% - 7px) !important;
+        padding:0 !important;
+        margin-right: 7px !important
+    }
+    
+    .search_jobs {
+        display: flex !important;
+        flex-flow: row wrap;
+    }
+
+    .job_listing_preview_title {
+        display: flex !important;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+    }
+
+    .post-438 .job-manager-form p input[type="submit"], .job_listing_preview_title input[type="submit"] {
+        margin-right: 7px;
+    }
+
+    .mepr-account-form, .mepr-signup-form, .mepr-newpassword-form {
+        display: flex !important;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    .mepr-account-form .mp-form-row, .mepr-signup-form .mp-form-row, .mepr-newpassword-form .mp-form-row{
+        width:50% !important;
+        padding-right: 17px !important;
+    }
+
+    .eccent_revieworder {
+        flex-flow: row wrap;
+    }
+
+    .eccent_revieworder_column {
+        width: 25%;
+    }
+}
