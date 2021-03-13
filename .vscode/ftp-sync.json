@@ -1,7 +1,7 @@
 {
-    "remotePath": "./brianr35.sg-host.com/public_html/wp-content/themes/hello-theme-child-master",
-    "host": "giowm1167.siteground.biz",
-    "username": "brian@brianr35.sg-host.com",
+    "remotePath": "./wp-content/themes/hello-theme-child-master",
+    "host": "ftp.wheelwish.com",
+    "username": "bressler@wheelwish.com",
     "password": "BhMoP1940",
     "port": 21,
     "secure": false,
