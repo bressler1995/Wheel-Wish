@@ -1,6 +1,6 @@
 <?php
     function wheelwish_map_function() {
-        $map_html = '<iframe allowfullscreen="" frameborder="0" style="margin:0; padding:0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDVZcSQ5hoT_4yaWkOzzMuqJr5OZvsMcKI&amp;q=846+Broken+Sound+Pkwy+NW,+Boca+Raton,+FL+33487,+USA&amp;zoom=12&amp;maptype=satellite" id="sccds_map_iframe" width="100%" height="400"></iframe>';    
+        $map_html = '<iframe allowfullscreen="" frameborder="0" style="margin:0; padding:0;" src="https://www.google.com/maps/embed/v1/place?key={KEYHERE}&amp;q=846+Broken+Sound+Pkwy+NW,+Boca+Raton,+FL+33487,+USA&amp;zoom=12&amp;maptype=satellite" id="sccds_map_iframe" width="100%" height="400"></iframe>';    
         return $map_html;
     }
 
